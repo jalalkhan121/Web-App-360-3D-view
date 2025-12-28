@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>360° Virtual Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="aframe.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Side Menu -->
+<div id="menu">
+  <h2>Locations</h2>
+  <ul>
+    <li onclick="goTo('room1')">Office</li>
+    <li onclick="goTo('room2')">Luxury Home</li>
+    <li onclick="goTo('garden')">Garden</li>
+  </ul>
+  <span class="close" onclick="toggleMenu()">✖</span>
+</div>
+
+<!-- Open Button -->
+<button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+
+
+<a-scene id="scene" vr-mode-ui="enabled: true">
+
+  <a-sky id="sky" src="assets/room1.png" rotation="0 -90 0"></a-sky>
+
+  <!-- Hotspots -->
+  <a-image src="assets/hotspot.png" position="2 1 -3" scale="0.5 0.5 0.5"
+           class="clickable" onclick="goTo('room2')"></a-image>
+
+  <a-image src="assets/hotspot.png" position="-2 1 -2" scale="0.5 0.5 0.5"
+           class="clickable" onclick="goTo('room3')"></a-image>
+
+</a-scene>
+
+</body>
+</html>

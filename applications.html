@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web-Based 3D 360° Virtual Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="aframe.min.js"></script>
+</head>
+<body>
+
+<a-scene>
+
+  <!-- 360° Scene #1 -->
+  <a-sky id="scene1" src="assets/room1.jpg" rotation="0 -90 0"></a-sky>
+
+  <!-- Hotspot to Scene #2 -->
+  <a-image src="assets/hotspot.png" position="2 1 -3" scale="0.5 0.5 0.5"
+           class="clickable"
+           onclick="changeScene('scene2', 'scene1')"></a-image>
+
+  <!-- 360° Scene #2 -->
+  <a-sky id="scene2" src="assets/more.jpg" visible="false"></a-sky>
+
+  <!-- Hotspot to Scene #1 (from Scene 2) -->
+  <a-image src="assets/hotspot.png" position="-2 1 -3" scale="0.5 0.5 0.5"
+           visible="false" id="backSpot"
+           onclick="changeScene('scene1', 'scene2')"></a-image>
+
+</a-scene>
+
+<script>
+  function changeScene(toShow, toHide) {
+    document.getElementById(toHide).setAttribute('visible', 'false');
+    document.getElementById(toShow).setAttribute('visible', 'true');
+
+    // Display back hotspot depending on scene
+    document.getElementById("backSpot").setAttribute('visible', toShow === 'scene2');
+  }
+</script>
+
+<style>
+  body { margin:0; overflow:hidden; }
+  .clickable { cursor: pointer; }
+</style>
+
+</body>
+</html>

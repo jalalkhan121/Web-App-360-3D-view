@@ -1,0 +1,51 @@
+body { margin:0; font-family: Arial, sans-serif; }
+
+.hero {
+  height:100vh;
+  background:url('assets/room1.jpg') center/cover no-repeat;
+  display:flex; justify-content:center; align-items:center;
+}
+
+.overlay { text-align:center; background:rgba(0,0,0,0.5); padding:30px; border-radius:10px; color:#fff; }
+.btn { background:#0099ff; padding:12px 25px; color:#fff; text-decoration:none; border-radius:5px; }
+
+body { margin: 0; font-family: Arial, sans-serif; overflow: hidden; }
+
+/* Side Menu */
+#menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden initially */
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  transition: left 0.3s ease; /* Smooth slide */
+  z-index: 1000;
+}
+
+#menu h2 { margin-top: 0; }
+#menu ul { list-style: none; padding: 0; }
+#menu li { padding: 12px 0; cursor: pointer; border-bottom: 1px solid #444; }
+#menu li:hover { background-color: #333; }
+#menu .close { cursor: pointer; display: block; text-align: right; margin-top: 20px; }
+
+/* Open Button */
+.open-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #0099ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.open-btn:hover { background: #007acc; }
+
+.clickable { cursor:pointer; }
+#sky{ margin-left:350px;}
